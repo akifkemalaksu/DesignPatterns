@@ -1,5 +1,4 @@
-﻿
-using FactoryMethodPattern.LogFactories;
+﻿using FactoryMethodPattern.LogFactories;
 
 LoggerFactory factory = new DatabaseLoggerFactory();
 
