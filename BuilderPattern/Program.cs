@@ -3,13 +3,13 @@ using BuilderPattern.Builders;
 using BuilderPattern.Products;
 using System.Text.Json;
 
-Director director = new();
-
 CarBuilder carBuilder = new();
 ManualBuilder manualBuilder = new();
 
-director.MakeSUV(carBuilder);
-director.MakeSUV(manualBuilder);
+Director director = new(carBuilder);
+director.MakeSUV();
+director.SetBuilder(manualBuilder);
+director.MakeSportsCar();
 
 Car car = carBuilder.GetResult();
 Manual manual = manualBuilder.GetResult();

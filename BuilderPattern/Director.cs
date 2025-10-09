@@ -5,18 +5,32 @@ namespace BuilderPattern
 {
     public class Director
     {
-        public void MakeSUV(IBuilder builder)
+        private IBuilder _builder;
+
+        public Director(IBuilder builder)
         {
-            builder.SetSeats(5);
-            builder.SetEngine(new SUVEngine());
-            builder.SetGPS();
-            builder.SetTripComputer();
+            _builder = builder ?? throw new ArgumentNullException(nameof(builder));
         }
 
-        public void MakeSportsCar(IBuilder builder)
+        public void SetBuilder(IBuilder builder)
         {
-            builder.SetSeats(2);
-            builder.SetEngine(new SportEngine());
+            _builder = builder ?? throw new ArgumentNullException(nameof(builder));
+        }
+
+        public void MakeSUV()
+        {
+            _builder.Reset();
+            _builder.SetSeats(5);
+            _builder.SetEngine(new SUVEngine());
+            _builder.SetGPS();
+            _builder.SetTripComputer();
+        }
+
+        public void MakeSportsCar()
+        {
+            _builder.Reset();
+            _builder.SetSeats(2);
+            _builder.SetEngine(new SportEngine());
         }
     }
 }
