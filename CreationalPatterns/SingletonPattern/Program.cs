@@ -1,6 +1,6 @@
 ﻿
 using SingletonPattern;
 
-var logger = Logger.GetInstance;
+var logger = Logger.GetInstance();
 logger.Log("Application started.");
 

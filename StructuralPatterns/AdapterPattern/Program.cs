@@ -1,6 +1,6 @@
-﻿using AdapterPattern.Services;
+using AdapterPattern.Services;
 
-IPaymentService paymentService = new PayTrPaymentService();
+IPaymentService paymentService = new PayTrAdapter();
 
 var payment = new AdapterPattern.Models.Payment
 {

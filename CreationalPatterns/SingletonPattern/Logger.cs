@@ -10,7 +10,7 @@
             _logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "app.log");
         }
 
-        public static Logger GetInstance = _instance.Value;
+        public static Logger GetInstance() => _instance.Value;
 
         public void Log(string message)
         {
